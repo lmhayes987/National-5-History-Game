@@ -9,88 +9,199 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play National 5 History Game.</tw-noscript></noscript></tw-story>
-<tw-storydata name="National 5 History Game" startnode="1" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="98D2F024-6884-426F-B62B-92BB53B26EF4" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* General Body Styling */
-body {
-  font-family: 'Georgia', serif; /* Serif font for a classic look */
-  background: #f5deb3; /* Parchment-like background */
-  color: #3e2a14; /* Dark brown for better readability */
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Passage Container Styling */
-tw-passage {
-  width: 80%; /* Consistent width for larger browsers */
-  max-width: 800px; /* Limit maximum size */
-  min-height: 60%; /* Ensure a consistent height */
-  padding: 30px; /* Padding inside the game box */
-  background: rgba(255, 248, 220, 0.95); /* Parchment with slight transparency */
-  border: 2px solid #3e2a14; /* Dark brown border for contrast */
-  border-radius: 15px; /* Rounded edges for elegance */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-  font-size: 1.5rem; /* Larger font size for readability */
-  color: #2c1a08; /* Slightly darker text color */
-  text-align: left; /* Align text to the left for readability */
-  overflow-y: auto; /* Add scroll if content overflows */
-}
-
-/* Menu Styling */
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-/* Button Styling */
-.menu-button {
-  background-color: #3e2a14; /* Dark brown for historical theme */
-  color: #fff8dc; /* Light parchment for contrast */
-  font-size: 1rem; /* Button font size */
-  padding: 15px 25px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.menu-button:hover {
-  background-color: #654321; /* Slightly lighter brown on hover */
-  transform: scale(1.05);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  tw-passage {
-    width: 90%; /* Fit smaller screens */
-    font-size: 1.2rem; /* Adjust font size for mobile */
+<tw-storydata name="National 5 History Game" startnode="1" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="98D2F024-6884-426F-B62B-92BB53B26EF4" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"><style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8dc; /* Soft cream background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height */
   }
 
-  .menu-button {
-    font-size: 0.9rem; /* Smaller buttons for smaller screens */
-    padding: 10px 20px;
+  #game-container {
+    width: 100%; /* Slightly wider for better use of space */
+    max-width: 1500px; /* Maximum width for larger screens */
+    padding: 20px;
+    background-color: #fffbe6; /* Subtle yellow background for the game */
+    border-radius: 20px;
+    border: 3px solid #8B4513; /* SaddleBrown border for elegance */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* More prominent shadow for depth */
   }
+
+  /* Text Styling */
+  p, h1, h2, h3 {
+    color: #333333; /* Dark gray text for better contrast */
+    line-height: 1.6; /* Improve text readability */
+  }
+
+  a {
+    color: #0066cc; /* Blue links for visibility */
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline; /* Underline on hover for clarity */
+  }
+
+/* Custom styling for specific passage links */
+a.custom-link {
+    color: #ff6600; /* Orange color for custom links */
 }
 
-@media (max-width: 480px) {
-  tw-passage {
-    width: 95%; /* Adjust for very small screens */
-    font-size: 1rem; /* Adjust font size further */
-  }
-
-  .menu-button {
-    font-size: 0.8rem;
-    padding: 8px 15px;
-  }
+a.custom-link:hover {
+    color: #cc5200; /* Darker orange when hovered */
 }
 
+  select, textarea, button {
+    width: 100%; /* Input fields take the full width */
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc; /* Light gray border for input elements */
+    border-radius: 5px;
+    background-color: #fff; /* White background for inputs */
+    color: #333333; /* Dark text inside input fields */
+  }
+
+  textarea {
+    resize: vertical; /* Allow resizing vertically */
+    min-height: 120px; /* Slightly taller minimum height for better usability */
+  }
+
+  button {
+    cursor: pointer;
+    background-color: #4CAF50; /* Green button background */
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    transform: scale(1.05); /* Add a slight zoom effect */
+  }
+
+  tw-story {
+    border: 5px solid #8B0000; /* Deep red border for classic touch */
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 40px auto; /* Center the game container */
+    background-color: #fffbe6; /* Soft yellow background inside game area */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for 3D effect */
+    font-family: 'Georgia', serif; /* Classic font for storytelling */
+    color: #333333; /* Dark text for better readability */
+  }
+tw-hook[name="tooltip"] {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted grey; /* If you want dots under the hoverable text */
+}
+tw-hook[name="tooltip"] tw-hook[name="tooltiptext"] {
+	visibility: hidden;
+	width: 12em;
+	background-color: grey;
+	color: black;
+	text-align: center;
+	margin-left: .25em;
+	padding: 0.5em;
+	border-radius: 1px solid white;
+ 
+	/* Position the tooltip text - see examples below! */
+	position: absolute;
+	z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+tw-hook[name="tooltip"]:hover tw-hook[name="tooltiptext"] {
+	visibility: visible;
+}
+
+  /* Style for the question boxes in regular text */
+  .question-box1 {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+    text-align: left;
+  }
+
+  /* Embossed look for the question */
+  .question-box1 {
+    background: linear-gradient(145deg, #e0e0e0, #ffffff);
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.7), inset -2px -2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Align the content at the top */
+  #quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  /* Style for the question box */
+  .question-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+  }
+
+  /* Embossed look for the question */
+  .question-box {
+    background: linear-gradient(145deg, #e0e0e0, #ffffff);
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.7), inset -2px -2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Style for buttons (answers) */
+  .answer-button {
+    display: inline-block; /* Makes the links behave like buttons */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from links */
+    text-align: center; /* Center text within the "button" */
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  /* Hover effect for buttons */
+  .answer-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Make the score and question counter always visible */
+  .score-container {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// Add dynamic title animations
 document.addEventListener("DOMContentLoaded", function () {
   const passage = document.querySelector("tw-passage");
@@ -104,7 +215,55 @@ document.addEventListener("DOMContentLoaded", function () {
     passage.insertBefore(title, passage.firstChild);
   }
 });
-</script><tw-passagedata pid="1" name="Home Page" tags="" position="900,25" size="100,100">:: Home
+
+async function markAnswerWithAI(answer) {
+  const prompt = `
+    You are a historical grader. I will provide you with a student's answer to a question about the French Revolution. 
+    The student's task is to explain what the historical source failed to mention. 
+    The correct answer should mention key factors like economic instability, international involvement, and power struggles.
+    
+    The student's answer is: "${answer}"
+    Please grade this answer and provide feedback on how well it identifies what the source failed to mention.
+  `;
+
+  const apiKey = "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";  // Replace with your OpenAI API key
+  const response = await fetch("https://api.openai.com/v1/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",  // Or other models you have access to
+      prompt: prompt,
+      max_tokens: 150,
+    }),
+  });
+  
+  const data = await response.json();
+  return data.choices[0].text.trim();
+}
+async function submitAnswer() {
+  const selectedQuotes = document.getElementById('quotes').value;
+  const userAnswer = document.getElementById('userAnswer').value.trim();
+  let feedback = "";
+
+  // Check if the user selected the correct quotes
+  let selectedCorrectly = correctQuotes.includes(selectedQuotes);
+  
+  // Use AI to evaluate the student's answer
+  let aiFeedback = await markAnswerWithAI(userAnswer);
+  
+  if (selectedCorrectly) {
+    feedback += "You identified the correct quotes! ";
+  } else {
+    feedback += "You missed some correct quotes. ";
+  }
+
+  feedback += "AI Feedback: " + aiFeedback;
+
+  document.getElementById("result").innerText = feedback;
+}</script><tw-passagedata pid="1" name="Home Page" tags="" position="900,25" size="100,100">:: Home
 Welcome to the National 5 Revision Game! Please choose an option below:
 
 &lt;div class=&quot;menu&quot;&gt;
@@ -121,6 +280,7 @@ You have chosen to practice exam questions. Please choose the type of question y
     [[&lt;button class=&quot;menu-button&quot;&gt;Compare Question&lt;/button&gt;|Compare Question]]
     [[&lt;button class=&quot;menu-button&quot;&gt;To What Extent Question&lt;/button&gt;|To What Extent Question]]
     [[&lt;button class=&quot;menu-button&quot;&gt;Evaluate the Usefulness Question&lt;/button&gt;|Evaluate the Usefulness Question]]
+    [[&lt;button class=&quot;menu-button&quot;&gt;1&lt;/button&gt;|Question Structure Quiz1]]
 &lt;/div&gt;
 
 [[Back to Home|Home Page]]</tw-passagedata><tw-passagedata pid="3" name="Revise Course Content" tags="" position="1100,100" size="100,100">:: Revise Course Content
@@ -132,7 +292,123 @@ You have chosen to revise course content. Please choose a topic:
     [[&lt;button class=&quot;menu-button&quot;&gt;Changing Britain&lt;/button&gt;|Changing Britain]]
 &lt;/div&gt;
 
-[[Back to Home|Home Page]]</tw-passagedata><tw-passagedata pid="4" name="Describe Question" tags="" position="0,300" size="100,100">[[Back to Home|Practice Exam Questions]]</tw-passagedata><tw-passagedata pid="5" name="Explain Question" tags="" position="150,300" size="100,100">[[Back to Home|Practice Exam Questions]]</tw-passagedata><tw-passagedata pid="6" name="How Fully Question" tags="" position="300,300" size="100,100">[[Back to Home|Practice Exam Questions]]</tw-passagedata><tw-passagedata pid="7" name="Compare Question" tags="" position="450,300" size="100,100">[[Back to Home|Practice Exam Questions]]</tw-passagedata><tw-passagedata pid="8" name="To What Extent Question" tags="" position="600,300" size="100,100">[[Back to Home|Practice Exam Questions]]</tw-passagedata><tw-passagedata pid="9" name="Evaluate the Usefulness Question" tags="" position="750,300" size="100,100">[[Back to Home|Practice Exam Questions]]</tw-passagedata><tw-passagedata pid="10" name="Free at Last" tags="" position="1300,100" size="100,100">[[Back to Home|Revise Course Content]]</tw-passagedata><tw-passagedata pid="11" name="Mary Queen of Scots" tags="" position="1575,100" size="100,100">:: Mary Queen of Scots
+[[Back to Home|Home Page]]</tw-passagedata><tw-passagedata pid="4" name="Describe Question" tags="" position="50,400" size="100,100">(text-style:&quot;underline&quot;, &quot;emboss&quot;)[&#39;&#39;The Describe Question -&#39;&#39; (text-colour:red)[&#39;&#39;Explained&#39;&#39;]]
+
+In a &#39;&#39;Describe Question&#39;&#39; you will be asked to describe an event, issue or development. This question is worth |tooltip&gt;[&#39;&#39;4 marks&#39;&#39;|tooltiptext&gt;[There will be two of these questions in the final exam - 8 Marks out of 80 (10%)]].
+
+According to the SQA: &quot;//Candidates must make a number of relevant, factual points. These should be key points. The points do not need to be in any particular order. Candidates may provide a number of straightforward points or a smaller number of developed points, or a combination of these.//&quot;
+
+You should aim to write &#39;&#39;one sentence with specific detail&#39;&#39; to get one mark.
+
+- &#39;&#39;1 Mark&#39;&#39; is given for each accurate relevant point
+- A &#39;&#39;Second Mark&#39;&#39; is given for any reason that is developed, as in the following example (&#39;&#39;Note - you do not have to do this!&#39;&#39;).
+
+[&lt;div class=&quot;question-box1&quot;&gt;Mary Queen of Scots never actually agreed to the signing of the Treaty of Edinburgh &#39;&#39;(1 Mark)&#39;&#39;. She particularly took issue with some terms of the treaty, such as the one that made her give up her claim to the English throne &#39;&#39;(a Second Mark for development)&#39;&#39;&lt;div&gt;]
+&#39;&#39;Top Tips: 
+
+&#39;&#39;Think of this question as a //knowledge-dump// – write down whatever you know about the question. It is helpful to picture what is //happening// and then describe that – almost like you are telling the story.&#39;&#39;
+
+&#39;&#39;You do not need to //explain// your points like you do in an [[Explain Question|Explain Question]], but make sure what you say has specific detail (see examples)|tooltip&gt;[&#39;&#39;?&#39;&#39;|tooltiptext&gt;[You don&#39;t have to use the word &#39;because&#39; in your descriptions and give an explanation in these types of questions]]
+
+//Look through the below examples to gain a better understanding of how to tackle &#39;&#39;Describe Questions&#39;&#39;://
+
+[[MQOS Example Questions|Describe Example1]]
+[[Changing Britain Example Questions|Describe Example2]]
+[[Free At Last Example Questions|Describe Example3]]
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Return|Practice Exam Questions]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="5" name="Explain Question" tags="" position="250,400" size="100,100">(text-style:&quot;underline&quot;, &quot;emboss&quot;)[&#39;&#39;The Explain Question -&#39;&#39; (text-colour:red)[&#39;&#39;Explained&#39;&#39;]]
+
+You will be asked to //explain// why something happened.
+
+According to the SQA Marking Scheme: &quot;Candidates must make a number of points that make the issue plain or clear, for example by showing connections between factors or causal relationships between events or ideas. These should be key reasons...&quot;
+
+These questions are always |tooltip&gt;[&#39;&#39;6 Marks&#39;&#39;|tooltiptext&gt;[There will be one of these questions in each section of the exam, three in total - 18 Marks out of 80 (23%)]]
+
+|p1&gt;[//Click to continue//:
+    (click: ?Page)[(show: ?p2)]]
+|p2)[(text-style:&quot;bold&quot;,&quot;underline&quot;)[&#39;&#39;&#39;&#39;Basic Answer Structure&#39;&#39;&#39;&#39;]
+
+[Use the structure &#39;&#39;point &gt; explain&#39;&#39;. Give the point (i.e. your answer to the question), and then explain it by adding detail to answer the question. 
+
+//One reason why... This is a reason because...// &#39;&#39;(1 Mark)&#39;&#39;
+
+Write these two sentences every time to gain &#39;&#39;1 Mark&#39;&#39;.
+
+If you repeat this process &#39;&#39;6 times&#39;&#39; you will gain full marks.
+
+//Click to &#39;&#39;See Example&#39;&#39;//]
+(click: ?Page)[(show: ?p3)]]
+|p3)[[&lt;div class=&quot;question-box1&quot;&gt;&#39;&#39;Example:&#39;&#39;
+
+&#39;&#39;Question:&#39;&#39; //Explain the reasons why canals declined as a form of transport.//
+
+&#39;&#39;Answer: &#39;&#39;One reason why the canals declined as a form of transport was the Railways (Point). This is a reason because the railways offered quicker travel and this led to people using the railways more than the canals, which were a much slower form of transport (Explain). &#39;&#39;(1 Mark) &#39;&#39;&lt;div&gt;]
+//Click to see Additional Notes//
+
+(click: ?Page)[(show: ?p4)]] |p4)[&#39;&#39;Additional Notes:&#39;&#39;
+
+- Explaining means… writing why the fact or answer you have given answers the question. 
+
+- Also, (text-style:&quot;underline&quot;)[you do not have to] rank your answers in any particular order.
+
+- Refer to the &lt;span style=&quot;color: #ff6600;&quot;&gt;[[Advanced Tips|Advanced Tips Explain]]&lt;/span&gt; once you feel you fully understand everything above]
+
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[See Basic Structure|Basic Structure Explain]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Advanced Tips|Advanced Tips Explain]]&lt;/span&gt;
+[[MQOS Example Questions|Explain Example1]]
+[[Changing Britain Example Questions|Explain Example2]]
+[[Free At Last Example Questions|Explain Example3]]
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Return|Practice Exam Questions]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="6" name="How Fully Question" tags="" position="50,0" size="100,100">&lt;span style=&quot;font-size: 30px;&quot;&gt;(text-style:&quot;underline&quot;)[&#39;&#39;The //How Fully// Question -&#39;&#39; (text-colour:red)[&#39;&#39;Explained&#39;&#39;]]&lt;/span&gt;.
+
+&#39;&#39;In&#39;&#39; a //&#39;&#39;How Fully&#39;&#39; //question, you will be asked to //describe// or //explain// ‘How fully’ (meaning how much) a source tells you about an event or development. According to the SQA: &quot;Candidates must make a judgement about the extent to which the source provides a full description/explanation of a given event or development.&quot;
+
+&#39;&#39;These&#39;&#39; questions are always worth |tooltip&gt;[&#39;&#39;6 Marks&#39;&#39;|tooltiptext&gt;[There will be two of these questions in the final the exam - 12 Marks out of 80 (15%)]].
+
+[&lt;div class=&quot;question-box1&quot;&gt; These questions are sometimes written as &#39;&#39;How Fully does Source A //explain//&#39;&#39;... or &#39;&#39;How Fully does Source A //describe//&#39;&#39;... but you can always structure your answer in the same way. &#39;&#39;How Fully&#39;&#39; //explain// questions may however require a bit more explanation/detail in your recall (see the example given). &lt;div&gt;]&lt;span style=&quot;color: #ff6600;&quot;&gt;[[See Basic Structure|Basic Structure How Fully]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Step One: Making a Judgment|Making a Judgement]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Step Two: The Source|The Source HF]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Step Three: Recall|Recall HF]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Additional Tips|Additional Tips HF]]&lt;/span&gt;
+
+&#39;&#39;Once&#39;&#39; you feel confident about how to structure your answers to these questions, try the below example How Fully Questions (each comes with a sample answer).
+
+[[MQOS Example Questions|How Fully Example1]]
+[[Changing Britain Example Questions|How Fully Example2]]
+[[Free At Last Example Questions|How Fully Example3]]
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Return|Practice Exam Questions]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="7" name="Compare Question" tags="" position="450,300" size="100,100">&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Return|Practice Exam Questions]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="8" name="To What Extent Question" tags="" position="600,300" size="100,100">&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Return|Practice Exam Questions]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="9" name="Evaluate the Usefulness Question" tags="" position="900,500" size="100,100">&lt;span style=&quot;font-size: 30px;&quot;&gt;(text-style:&quot;underline&quot;)[&#39;&#39;The //Evaluate the Usefulness// Question -&#39;&#39; (text-colour:red)[&#39;&#39;Explained&#39;&#39;]]&lt;/span&gt;.
+
+//&#39;&#39;Evaluate the Usefulness&#39;&#39;// questions are worth &#39;&#39;5 marks&#39;&#39;. You will be given a source and asked to weigh up how useful it is – meaning “//how good is this as a source of information//”? 
+
+&#39;&#39;Each&#39;&#39; question comes with the following &#39;&#39;prompt&#39;&#39; to help you:
+
+[&lt;div class=&quot;question-box1&quot;&gt;“You may want to comment on what type of source it is, who wrote it, when they wrote it, why they wrote it, what they say and what has been missed out.”&lt;div&gt;]&#39;&#39;This&#39;&#39; is telling you all the different ways that you can get marks for these questions. As you can see there are lots of ways, probably so many ways that it is easy to overcomplicate this question! Here they are listed below in the order of difficulty with the number of marks you can score for each: 
+
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Who Wrote it?|Who Wrote it?]]&lt;/span&gt; - this is worth &#39;&#39;1 Mark&#39;&#39;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[What the Source says?|What it says?]]&lt;/span&gt; - this is worth up to &#39;&#39;2 Marks&#39;&#39;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[What has been Missed out?|What Missed?]]&lt;/span&gt; - this is worth up to &#39;&#39;2 Marks&#39;&#39;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[When they wrote it?|When Wrote?]]&lt;/span&gt; - this is worth &#39;&#39;1 Mark&#39;&#39;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[What Type of source it is?|Type of Source]]&lt;/span&gt; - this is worth &#39;&#39;1 Mark&#39;&#39;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Why they wrote it?|Why they wrote it]]&lt;/span&gt; - this is worth &#39;&#39;1 Mark&#39;&#39;
+
+[&lt;div class=&quot;question-box1&quot;&gt;(text-style:&quot;bold&quot;,&quot;underline&quot;)[RECOMMENDED STRUCTURE:]
+The easiest, most straightforward way to answer these questions is to comment on &lt;span style=&quot;color: #ff6600;&quot;&gt;[[Who Wrote the Source|Who Wrote it?]]&lt;/span&gt; &#39;&#39;(AUTHOR)&#39;&#39;, &lt;span style=&quot;color: #ff6600;&quot;&gt;[[What the Source says?|What it says?]]&lt;/span&gt; &#39;&#39;(QUOTES)&#39;&#39; x2, and &lt;span style=&quot;color: #ff6600;&quot;&gt;[[What has been Missed out?|What Missed?]]&lt;/span&gt; &#39;&#39;(RECALL)&#39;&#39; x2.&lt;div&gt;]The &#39;&#39;KEY THING&#39;&#39; to remember with this question is that when you identify who wrote the source, when they wrote, why they wrote it, what they say or what has been missed out, you &#39;&#39;ALWAYS &#39;&#39; then need to say why this makes the sources (text-style:&quot;italic&quot;,&quot;underline&quot;)[//useful or not useful//]. &#39;&#39;This is where you actually gain the mark!&#39;&#39;
+
+[&lt;div class=&quot;question-box1&quot;&gt;In other words, aim to write two sentences to get a mark:
+
+Comment on the source and then, in a new sentence, write “//this makes the source useful/not useful because…//”&lt;div&gt;]Below, you will be able to see how you can comment on each part of the source and how you should structure your answers: 
+
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Who Wrote it?|Who Wrote it?]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[What the Source says?|What it says?]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[What has been Missed out?|What Missed?]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[When they wrote it?|When Wrote?]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[What Type of source it is?|Type of Source]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Why they wrote it?|Why they wrote it]]&lt;/span&gt;
+
+[[Recommended Basic Structure|Basic Structure Evaluate]]
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Return|Practice Exam Questions]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="10" name="Free at Last" tags="" position="1300,100" size="100,100">[[Back to Home|Revise Course Content]]</tw-passagedata><tw-passagedata pid="11" name="Mary Queen of Scots" tags="" position="1575,100" size="100,100">:: Mary Queen of Scots
 You have chosen to revise the Mary Queen of Scots Topic. What Section would you like to Revise?:
 
 &lt;div class=&quot;menu&quot;&gt;
@@ -144,7 +420,486 @@ You have chosen to revise the Mary Queen of Scots Topic. What Section would you 
 
 &lt;img src=&quot;https://i.imgur.com/RmXf4hm.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:100%; max-width:500px;&quot;&gt;
 
-[[Back to Home|Revise Course Content]]</tw-passagedata><tw-passagedata pid="12" name="Changing Britain" tags="" position="1425,100" size="100,100">[[Back to Home|Revise Course Content]]</tw-passagedata><tw-passagedata pid="13" name="Section 1 (MQOS)" tags="" position="1700,200" size="100,100">[[Back to Home|Mary Queen of Scots]]</tw-passagedata><tw-passagedata pid="14" name="Section 2 (MQOS)" tags="" position="1800,200" size="100,100">[[Back to Home|Mary Queen of Scots]]</tw-passagedata><tw-passagedata pid="15" name="Section 3 (MQOS)" tags="" position="1700,300" size="100,100">[[Back to Home|Mary Queen of Scots]]</tw-passagedata><tw-passagedata pid="16" name="Section 4 (MQOS)" tags="" position="1800,300" size="100,100">[[Back to Home|Mary Queen of Scots]]</tw-passagedata></tw-storydata>
+[[Back to Home|Revise Course Content]]</tw-passagedata><tw-passagedata pid="12" name="Changing Britain" tags="" position="1425,100" size="100,100">[[Back to Home|Revise Course Content]]</tw-passagedata><tw-passagedata pid="13" name="Section 1 (MQOS)" tags="" position="1700,200" size="100,100">[[Back to Home|Mary Queen of Scots]]</tw-passagedata><tw-passagedata pid="14" name="Section 2 (MQOS)" tags="" position="1800,200" size="100,100">[[Back to Home|Mary Queen of Scots]]</tw-passagedata><tw-passagedata pid="15" name="Section 3 (MQOS)" tags="" position="1700,300" size="100,100">[[Back to Home|Mary Queen of Scots]]</tw-passagedata><tw-passagedata pid="16" name="Section 4 (MQOS)" tags="" position="1800,300" size="100,100">[[Back to Home|Mary Queen of Scots]]</tw-passagedata><tw-passagedata pid="17" name="Describe Example3" tags="" position="0,700" size="100,100">&#39;&#39;6. Describe the difficulties faced by immigrants to the USA in the 1920s. (4 Marks)&#39;&#39;
+
+|p1&gt;[//Click to reveal sample answers to question//:
+    (click: ?Page)[(show: ?p2)]]
+|p2)[Immigrants from Southern and Eastern Europe experienced racial discrimination and abuse from some Americans, particularly by |tooltip&gt;[WASPS|tooltiptext&gt;[White Anglo-Saxon Protestants]]. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p3)]]
+|p3)[These |tooltip&gt;[New Immigrants|tooltiptext&gt;[These were immigrants from countries like Italy, Poland or Russia]] would also find it hard to find jobs, particularly well-paid jobs, because some Americans refused to hire them. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p4)]]
+|p4)[Many New Immigrants could also only afford to live in the poorest housing areas in American cities and typically lived alongside their fellow immigrants in places such as ‘Little Italy’ and ‘Little Russia’ &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p5)]]
+|p5)[However, for many immigrants life was still much better for them in the USA. They enjoyed the various freedoms on offer, such as the right to vote, and the overall better standard of living compared to southern and eastern Europe.&#39;&#39;(1 Mark)&#39;&#39;]
+
+[[See SQA Marking Scheme for this Question|FALMIDesc]] 
+[[Back|Describe Question]]</tw-passagedata><tw-passagedata pid="18" name="Describe Example2" tags="" position="0,600" size="100,100">&#39;&#39;44. Describe the development of the railway network in Britain. (4 Marks)&#39;&#39;
+
+|p1&gt;[//Click to reveal sample answers to question//:
+    (click: ?Page)[(show: ?p2)]]
+|p2)[By the 1830s, electrical signalling had been introduced on the railways to improve safety. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p3)]]
+|p3)[There was a period of ‘Railway Mania’ which involved the building of many new railway lines in the 1830s and 1840s &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p4)]]
+|p4)[By the 1850s, 1st class carriages with upholstered seats were also introduced to allow the rich to travel comfortably. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p5)]]
+|p5)[The speeds of locomotives also increased by the 1850s, with most trains able to travel over 60 miles per hour. &#39;&#39;(1 Mark)&#39;&#39;]
+
+[[See SQA Marking Scheme for this Question|CBMIDesc]] 
+[[Back|Describe Question]]</tw-passagedata><tw-passagedata pid="19" name="Describe Example1" tags="" position="0,500" size="100,100">&#39;&#39;6. Describe the power of the monarchy and nobility in the 1540s. (4 Marks)&#39;&#39;
+
+|p1&gt;[//Click to reveal sample answers to question//:
+    (click: ?Page)[(show: ?p2)]]
+|p2)[In Scotland, the |tooltip&gt;[monarch|tooltiptext&gt;[A King or Queen]] had various powers including being in charge of the military. He could declare war on other countries and raise an army from the people of Scotland. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p3)]]
+|p3)[The monarch was also responsible for giving out lands and titles to the Scottish nobles. He could take away these lands and titles if he wanted too. &#39;&#39;(1 Mark)&#39;&#39; |tooltip&gt;[?|tooltiptext&gt;[Lands and titles as the Earldom of Moray, or the Earldom of Huntly]]
+(click: ?Page)[(show: ?p4)]]
+|p4)[The Scottish nobles controlled the people at a local level and were responsible for collecting |tooltip&gt;[taxes|tooltiptext&gt;[These could be in the form of actual money, but they were more likely goods]]. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p5)]]
+|p5)[The Scottish nobles also had the power to control Law and Order on their lands. &#39;&#39;(1 Mark)&#39;&#39;]
+
+[[See SQA Marking Scheme for this Question|MQOSMIDesc]] 
+[[Back|Describe Question]]</tw-passagedata><tw-passagedata pid="20" name="CBMIDesc" tags="" position="100,600" size="100,100">&lt;img src=&quot;https://i.imgur.com/2tI2If5.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:115%; max-width:1100px;&quot;&gt;
+
+[[Back|Describe Example2]]</tw-passagedata><tw-passagedata pid="21" name="MQOSMIDesc" tags="" position="100,500" size="100,100">&lt;img src=&quot;https://i.imgur.com/4IKhXR7.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:115%; max-width:1100px;&quot;&gt;
+
+[[Back|Describe Example1]]</tw-passagedata><tw-passagedata pid="22" name="FALMIDesc" tags="" position="100,700" size="100,100">&lt;img src=&quot;https://i.imgur.com/S5kBEUb.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:115%; max-width:1100px;&quot;&gt;
+
+[[Back|Describe Example3]]</tw-passagedata><tw-passagedata pid="23" name="Question Structure Quiz1" tags="" position="1375,325" size="100,100">:: Start
+Welcome to the Random Quiz!
+
+Your current score: $score  
+Questions answered: $questionCounter/10  
+
+[[Start Quiz|Quiz Setup]]</tw-passagedata><tw-passagedata pid="24" name="Advanced Tips Explain" tags="" position="200,600" size="100,100">&#39;&#39;Advanced Tips - Only use if you understand the Basic Answer Structure&#39;&#39;
+
+According to the SQA Marking Scheme: &quot;Candidates may provide a number of straightforward reasons or //a smaller number of developed reasons//, or a combination of these.&quot;
+
+&#39;&#39;Developed reasons&#39;&#39; are answers with an extra/additional piece of explanation.
+
+[&lt;div class=&quot;question-box1&quot;&gt;&#39;&#39;For Example:&#39;&#39;
+
+&#39;&#39;Question:&#39;&#39; //Explain the reasons why canals declined as a form of transport.//
+
+&#39;&#39;Answer:&#39;&#39; One reason why the canals declined as a form of transport was the Railways (Point). This is a reason because the railways offered quicker travel and this led to people using the railways more than the canals, which were a much slower form of transport (Explain). &#39;&#39;(1 Mark) &#39;&#39; //The railways also became more popular than canals as they could carry more passengers at a time, further leading to their decline.// |tooltip&gt;[&#39;&#39;(DV 1 Mark)&#39;&#39;|tooltiptext&gt;[DV means &#39;developed reasons&#39;]]&lt;div&gt;]
+This means that technically you could achieve full marks in an Explain question with 3 developed reasons, but this is tricky to do!
+
+[[Previous|Explain Question]]</tw-passagedata><tw-passagedata pid="25" name="Explain Example1" tags="" position="300,500" size="100,100">&#39;&#39;6. Explain the reasons why Mary, Queen of Scots left Scotland for France in 1548. (6 Marks)&#39;&#39;
+
+|p1&gt;[//Click to reveal sample answers to question//:
+    (click: ?Page)[(show: ?p2)]]
+|p2)[One reason for why Mary Queen of Scots left for France was the Rough Wooing. This is a reason because following breaking of treaty of Greenwich, Henry invades Scotland – Scotland becomes a very dangerous place, with the English forces burning and looting various towns/cities in an attempt to capture Mary. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p3)]]
+|p3)[Another reason for why Mary Queen of Scots left for France was the Treaty of Haddington. This is a reason because this was an agreement between France and Scotland for French assistance in the war against England – one of the terms of the treaty is that Mary would marry the French Dauphin and move to France. &#39;&#39;(1 Mark)&#39;&#39; 
+(click: ?Page)[(show: ?p4)]]
+|p4)[Another reason for why Mary Queen of Scots left for France was Fear of Scottish Nobles. This is a reason because there was concerns that some of the Scottish nobles would betray Mary and hand her over to the English. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p5)]]
+|p5)[Another reason for why Mary Queen of Scots left for France was Education. This is a reason because France had one of the best education systems in Europe at this time and Mary’s mother wanted her to be raised in a similar style that she had received growing up. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p6)]]
+|p6)[A penultimate reason for why Mary Queen of Scots left for France was the Reformation. This is a reason because there were concerns about the growth of Protestantism in Scotland and Mary’s mother may have sent to her to France for safety from any religious tension that was developing. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p7)]]
+|p7)[A final reason for why Mary Queen of Scots left for France was the Ambition of the Guise family. This is a reason because Guise family were very powerful in France and hoped to gain power through Mary’s marriage to Dauphin Francis. &#39;&#39;(1 Mark)&#39;&#39;]
+
+[[See SQA Marking Scheme for this Question|MQOSMIExpl]] 
+[[Previous|Explain Question]]</tw-passagedata><tw-passagedata pid="26" name="Explain Example2" tags="" position="300,600" size="100,100">&#39;&#39;6. Explain the reasons why working conditions in coal mines improved by 1914. (6 Marks)&#39;&#39;
+
+|p1&gt;[//Click to reveal sample answers to question//:
+    (click: ?Page)[(show: ?p2)]]
+|p2)[One reason for why working conditions in coal mines improved was steam-driven ventilation fans. This is a reason because these fans improved the quality of the air in the mines and this prevented workers from suffering from choke damp. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p3)]]
+|p3)[Another reason for why working conditions in coal mines improved was electrical lighting. This is a reason because it was much more effective than the Davy Lamp and allowed workers to see what they were doing, preventing the chance of injury. &#39;&#39;(1 Mark)&#39;&#39; 
+(click: ?Page)[(show: ?p4)]]
+|p4)[Another reason for why working conditions in coal mines improved was gelignite with detonators. This is a reason because this allowed workers to blast the coal in a much safer way than previously. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p5)]]
+|p5)[Another reason for why working conditions in coal mines improved was cutting and digging machines. This is a reason because this made it much easier for the hewers to cut the coal and prevented the chance of injury. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p6)]]
+|p6)[A penultimate reason for why working conditions in coal mines improved was banning children from working in the mines. This is a reason because it prevented children from suffering in the mines by having to do dangerous work in the mines that could potentially injure them for life. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p7)]]
+|p7)[A final reason for why working conditions in coal mines improved was the Mines Acts. This is a reason because it improved health and safety standards in the mines and reduced working hours for workers. &#39;&#39;(1 Mark)&#39;&#39;]
+
+[[See SQA Marking Scheme for this Question|CBMIExpl]] 
+[[Previous|Explain Question]]</tw-passagedata><tw-passagedata pid="27" name="Explain Example3" tags="" position="300,700" size="100,100">&#39;&#39;6. Explain the reasons why some people were against immigration to America by the 1920’s . (6 Marks)&#39;&#39;
+
+|p1&gt;[//Click to reveal sample answers to question//:
+    (click: ?Page)[(show: ?p2)]]
+|p2)[One reason people were against immigration was due to jobs. This is a reason Americans were against immigration as they worried that new immigrants were taking jobs away from them as immigrants were willing to works for less pay. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p3)]]
+|p3)[Another reason people were against immigration to America in the 1920s was due to crime. This is a reason because Americans worried that immigrants, particularly from Italy, were bringing organized crime in the form of the mafia to the country. &#39;&#39;(1 Mark)&#39;&#39; 
+(click: ?Page)[(show: ?p4)]]
+|p4)[Americans were also more against immigration in the 1920s due to religion. The WASPS were established Protestants and they worried about new immigrants bringing different religions to America. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p5)]]
+|p5)[The fear of Communism was another reason why people were against immigration to America in the 1920s. This was because Americans worried immigrants from Eastern Europe would allow Communism to spread into American society. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p6)]]
+|p6)[A penultimate reason why Americans were against immigration was due to the isolated communities that immigrants created in America. This is a reason because Immigrants tended to stay in their own communities (Little Italy in New York) which created suspicion. &#39;&#39;(1 Mark)&#39;&#39;
+(click: ?Page)[(show: ?p7)]]
+|p7)[Finally, housing was a reason people were against immigration. The number of new immigrants was creating a housing shortage in industrial cities and Americans worried that immigrants would require too many homes. &#39;&#39;(1 Mark)&#39;&#39;]
+
+[[See SQA Marking Scheme for this Question|FAMIExpl]] 
+[[Previous|Explain Question]]</tw-passagedata><tw-passagedata pid="28" name="CBMIExpl" tags="" position="400,600" size="100,100">&lt;img src=&quot;https://i.imgur.com/vOvSmV1.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:115%; max-width:1100px;&quot;&gt;
+[[Previous|Explain Example2]]</tw-passagedata><tw-passagedata pid="29" name="Quiz Setup" tags="" position="1550,375" size="100,100">:: Quiz Setup
+&lt;!-- Initialize variables --&gt;
+(set: $score to 0)
+(set: $questionCounter to 1)
+
+&lt;!-- Define the pool of questions --&gt;
+(set: $questions to (a:
+    &quot;What is the capital of France?&quot;,
+    &quot;What is 2 + 2?&quot;,
+    &quot;Which planet is known as the Red Planet?&quot;,
+    &quot;What is the largest ocean?&quot;,
+    &quot;Who wrote &#39;Romeo and Juliet&#39;?&quot;,
+    &quot;What is the currency of Japan?&quot;,
+    &quot;What is the largest country by area?&quot;,
+    &quot;Who painted the Mona Lisa?&quot;,
+    &quot;What is the capital of Japan?&quot;,
+    &quot;What is the smallest continent?&quot;,
+    &quot;Which element has the chemical symbol &#39;O&#39;?&quot;,
+    &quot;What is the largest desert in the world?&quot;,
+    &quot;Which ocean is the deepest?&quot;,
+    &quot;Who is known as the father of physics?&quot;,
+    &quot;What is the square root of 64?&quot;,
+    &quot;What is the longest river in the world?&quot;,
+    &quot;Who discovered America?&quot;,
+    &quot;What is the boiling point of water in Celsius?&quot;,
+    &quot;What is the national animal of Canada?&quot;,
+    &quot;What is the fastest animal on land?&quot;
+))
+
+&lt;!-- Define the answers --&gt;
+(set: $answers to (a:
+    (a: &quot;Paris&quot;, &quot;London&quot;, &quot;Berlin&quot;, &quot;Madrid&quot;),
+    (a: &quot;4&quot;, &quot;5&quot;, &quot;3&quot;, &quot;6&quot;),
+    (a: &quot;Mars&quot;, &quot;Venus&quot;, &quot;Jupiter&quot;, &quot;Saturn&quot;),
+    (a: &quot;Pacific&quot;, &quot;Atlantic&quot;, &quot;Indian&quot;, &quot;Arctic&quot;),
+    (a: &quot;Shakespeare&quot;, &quot;Dickens&quot;, &quot;Austen&quot;, &quot;Tolkien&quot;),
+    (a: &quot;Yen&quot;, &quot;Won&quot;, &quot;Euro&quot;, &quot;Dollar&quot;),
+    (a: &quot;Russia&quot;, &quot;China&quot;, &quot;Canada&quot;, &quot;United States&quot;),
+    (a: &quot;Leonardo da Vinci&quot;, &quot;Vincent van Gogh&quot;, &quot;Pablo Picasso&quot;, &quot;Claude Monet&quot;),
+    (a: &quot;Tokyo&quot;, &quot;Seoul&quot;, &quot;Beijing&quot;, &quot;Kyoto&quot;),
+    (a: &quot;Australia&quot;, &quot;Africa&quot;, &quot;Asia&quot;, &quot;Europe&quot;),
+    (a: &quot;Oxygen&quot;, &quot;Hydrogen&quot;, &quot;Carbon&quot;, &quot;Nitrogen&quot;),
+    (a: &quot;Sahara&quot;, &quot;Gobi&quot;, &quot;Karakum&quot;, &quot;Kalahari&quot;),
+    (a: &quot;Pacific&quot;, &quot;Atlantic&quot;, &quot;Indian&quot;, &quot;Arctic&quot;),
+    (a: &quot;Einstein&quot;, &quot;Newton&quot;, &quot;Galileo&quot;, &quot;Tesla&quot;),
+    (a: &quot;8&quot;, &quot;9&quot;, &quot;10&quot;, &quot;11&quot;),
+    (a: &quot;Amazon&quot;, &quot;Nile&quot;, &quot;Yangtze&quot;, &quot;Mississippi&quot;),
+    (a: &quot;Columbus&quot;, &quot;Magellan&quot;, &quot;Cook&quot;, &quot;Cabot&quot;),
+    (a: &quot;100°C&quot;, &quot;90°C&quot;, &quot;80°C&quot;, &quot;110°C&quot;),
+    (a: &quot;Beaver&quot;, &quot;Moose&quot;, &quot;Bald Eagle&quot;, &quot;Bear&quot;),
+    (a: &quot;Cheetah&quot;, &quot;Lion&quot;, &quot;Leopard&quot;, &quot;Tiger&quot;)
+))
+
+&lt;!-- Define the correct answers --&gt;
+(set: $correctAnswers to (a:
+    &quot;Paris&quot;, &quot;4&quot;, &quot;Mars&quot;, &quot;Pacific&quot;, &quot;Shakespeare&quot;,
+    &quot;Yen&quot;, &quot;Russia&quot;, &quot;Leonardo da Vinci&quot;, &quot;Tokyo&quot;, &quot;Australia&quot;,
+    &quot;Oxygen&quot;, &quot;Sahara&quot;, &quot;Pacific&quot;, &quot;Einstein&quot;, &quot;8&quot;,
+    &quot;Amazon&quot;, &quot;Columbus&quot;, &quot;100°C&quot;, &quot;Beaver&quot;, &quot;Cheetah&quot;
+))
+
+&lt;!-- Start the quiz --&gt;
+[[Start Question 1|Question]]</tw-passagedata><tw-passagedata pid="30" name="Question" tags="" position="1550,500" size="100,100">:: Question
+&lt;!-- Randomly select a question --&gt;
+(set: $randomIndex to (random: 1, $questions&#39;s length))
+(set: $currentQuestion to $questions&#39;s ($randomIndex))
+(set: $currentAnswers to $answers&#39;s ($randomIndex))
+(set: $currentCorrectAnswer to $correctAnswers&#39;s ($randomIndex))
+
+&lt;!-- Remove the question to prevent repeats --&gt;
+(set: $questions to (it - (a: $currentQuestion)))
+(set: $answers to (it - (a: $currentAnswers)))
+(set: $correctAnswers to (it - (a: $currentCorrectAnswer)))
+
+&lt;!-- Display the score and question counter at the top --&gt;
+&lt;div class=&quot;score-container&quot;&gt;
+  Your current score: $score  
+  Questions answered: $questionCounter/10  
+&lt;/div&gt;
+
+&lt;!-- Display the question in a styled box --&gt;
+&lt;div class=&quot;question-box&quot;&gt;
+  $currentQuestion
+&lt;/div&gt;
+
+&lt;!-- Display the answers as buttons --&gt;
+(link: $currentAnswers&#39;s 1st)[
+    (set: $selectedAnswer to $currentAnswers&#39;s 1st)
+    (if: $selectedAnswer is $currentCorrectAnswer)[
+        (set: $score to $score + 1)
+        Correct! Your score is now: $score.
+    ]
+    (else:)[
+        Incorrect. The correct answer is: $currentCorrectAnswer.
+    ]
+    (set: $questionCounter to $questionCounter + 1)
+    (if: $questionCounter &lt;= 10)[
+        [[Next Question|Question]]
+    ]
+]
+(link: $currentAnswers&#39;s 2nd)[
+    (set: $selectedAnswer to $currentAnswers&#39;s 2nd)
+    (if: $selectedAnswer is $currentCorrectAnswer)[
+        (set: $score to $score + 1)
+        Correct! Your score is now: $score.
+    ]
+    (else:)[
+        Incorrect. The correct answer is: $currentCorrectAnswer.
+    ]
+    (set: $questionCounter to $questionCounter + 1)
+    (if: $questionCounter &lt;= 10)[
+        [[Next Question|Question]]
+    ]
+]
+(link: $currentAnswers&#39;s 3rd)[
+    (set: $selectedAnswer to $currentAnswers&#39;s 3rd)
+    (if: $selectedAnswer is $currentCorrectAnswer)[
+        (set: $score to $score + 1)
+        Correct! Your score is now: $score.
+    ]
+    (else:)[
+        Incorrect. The correct answer is: $currentCorrectAnswer.
+    ]
+    (set: $questionCounter to $questionCounter + 1)
+    (if: $questionCounter &lt;= 10)[
+        [[Next Question|Question]]
+    ]
+]
+(link: $currentAnswers&#39;s 4th)[
+    (set: $selectedAnswer to $currentAnswers&#39;s 4th)
+    (if: $selectedAnswer is $currentCorrectAnswer)[
+        (set: $score to $score + 1)
+        Correct! Your score is now: $score.
+    ]
+    (else:)[
+        Incorrect. The correct answer is: $currentCorrectAnswer.
+    ]
+    (set: $questionCounter to $questionCounter + 1)
+    (if: $questionCounter &lt;= 10)[
+        [[Next Question|Question]]
+    ]
+]</tw-passagedata><tw-passagedata pid="31" name="Answer Check" tags="" position="1550,625" size="100,100">:: Answer Check
+&lt;!-- Check if the answer is correct --&gt;
+(if: $selectedAnswer is $currentCorrectAnswer)[
+    (set: $score to $score + 1)
+    Correct! Your score is now: $score.
+]
+(else:)[
+    Incorrect. The correct answer was: $currentCorrectAnswer.
+]
+
+&lt;!-- Increase question counter --&gt;
+(set: $questionCounter to $questionCounter + 1)
+
+&lt;!-- Check if the quiz is complete --&gt;
+(if: $questionCounter &gt;= 10)[
+    [[Finish Quiz|End]]
+]
+(else:)[
+    [[Next Question|Question]]
+]</tw-passagedata><tw-passagedata pid="32" name="End" tags="" position="1375,475" size="100,100">:: End
+Congratulations, you completed the quiz!  
+Your final score is: $score/10.  
+
+[[Play Again|Quiz Setup]]</tw-passagedata><tw-passagedata pid="33" name="Basic Structure Explain" tags="" position="200,500" size="100,100">&lt;div class=&quot;big-text&quot;&gt;(text-style:&quot;bold&quot;,&quot;underline&quot;, &quot;emboss&quot;)[&#39;&#39;The Explain Question – Basic Structure&#39;&#39;]&lt;div&gt;
+
+&lt;div class=&quot;question-box1&quot;&gt;&lt;div class=&quot;big-text&quot;&gt;One reason for… (what is in the question) is… This is a reason because…
+
+Another reason for… (what is in the question) is… This is a reason because…
+ 
+Another reason for… (what is in the question) is… This is a reason because…
+
+Another reason for… (what is in the question) is… This is a reason because…
+
+A penultimate reason for…(what is in the question) is… This is a reason because…
+
+A final reason for…(what is in the question) is… This is a reason because…&lt;div&gt;&lt;div&gt;
+[[Previous|Explain Question]]</tw-passagedata><tw-passagedata pid="34" name="MQOSMIExpl" tags="" position="400,500" size="100,100">&lt;img src=&quot;https://i.imgur.com/dQCTutD.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:115%; max-width:1100px;&quot;&gt;
+[[Previous|Explain Example1]]</tw-passagedata><tw-passagedata pid="35" name="FAMIExpl" tags="" position="400,700" size="100,100">&lt;img src=&quot;https://i.imgur.com/8rlANGG.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:115%; max-width:1100px;&quot;&gt;
+
+[[Previous|Explain Example3]]</tw-passagedata><tw-passagedata pid="36" name="How Fully Example1" tags="" position="0,100" size="100,100">&lt;img src=&quot;https://i.imgur.com/dF6PDoZ.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:115%; max-width:1100px;&quot;&gt;
+|p1&gt;[//Click to reveal sample answers to question//:
+    (click: ?Page)[(show: ?p2)]]
+|p2)[&#39;&#39;Source A&#39;&#39; //partly// explains the reasons why Mary Queen of Scot’s marriage to Darnley caused problems for her. &#39;&#39;(Judgment)&#39;&#39;
+(click: ?Page)[(show: ?p3)]]
+|p3)[&#39;&#39;Source A&#39;&#39; says, “//The marriage caused divisions among the Scottish lords who rebelled against Mary resulting in the Chaseabout Raid//”. This shows that the marriage caused problems for Mary because it led to some Scots, like the Earl of Moray, to rebel against Mary as they were unhappy with her choice of husband. &#39;&#39;(1 mark – Source) &#39;&#39;
+(click: ?Page)[(show: ?p4)]]
+|p4)[&#39;&#39;Source A&#39;&#39; also says, “//Although Mary successfully restored order in Scotland she lost the support of important nobles involved in the rebellion such as Moray and Argyl//l”. This shows that the marriage caused problems for Mary because she lost the support of these powerful nobles, who then plotted against her from England. &#39;&#39;(1 Mark - Source)&#39;&#39;
+(click: ?Page)[(show: ?p5)]]
+|p5)[&#39;&#39;Source A&#39;&#39; also says, “//The marriage then deteriorated quickly when Darnley demanded the Crown Matrimonial and Mary refused//”. This shows that the marriage caused problems for Mary because she did not want to give Darnley equal power with her and this caused them to fall out – their marriage never recovered. &#39;&#39;(1 Mark - Source)&#39;&#39;
+(click: ?Page)[(show: ?p6)]]
+|p6)[However, &#39;&#39;Source A&#39;&#39; fails to mention the fact that the marriage also caused problems because it upset Scottish Protestants. This is because Darnley was Catholic and this caused Scottish Protestants like John Knox to be very angry with Mary. &#39;&#39;(1 Mark - Recall)&#39;&#39;
+(click: ?Page)[(show: ?p7)]]
+|p7)[However, &#39;&#39;Source A&#39;&#39; also fails to mention that the marriage caused problems because Darnley started having affairs. This negatively impacted on the reputation of the monarchy in Scotland. &#39;&#39;(1 Mark - Recall)&#39;&#39;
+(click: ?Page)[(show: ?p8)]]
+|p8)[However, &#39;&#39;Source A &#39;&#39;also fails to mention that the marriage caused problems because of Darnley’s plots. Darnley started to plot against Mary and eventually betrayed her through the murder of Rizzio. He also started coming up with plots to restore Catholicism in Scotland. &#39;&#39;(1 Mark - Recall)&#39;&#39;]
+
+[[See SQA Marking Scheme for this Question|MQOSMIHF]] 
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Previous|How Fully Question]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="37" name="How Fully Example2" tags="" position="0,200" size="100,100">&lt;img src=&quot;https://i.imgur.com/isOtYvo.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:115%; max-width:1100px;&quot;&gt;
+|p1&gt;[//Click to reveal sample answers to question//:
+    (click: ?Page)[(show: ?p2)]]
+|p2)[&#39;&#39;Source C&#39;&#39; //partly// explains the ways in which laws helped to improve working conditions in coal mines. &#39;&#39;(Judgment)&#39;&#39;
+(click: ?Page)[(show: ?p3)]]
+|p3)[&#39;&#39;Source C&#39;&#39; says, “//The 1842 Mines Act stated that no-one under 15 could be in charge of operating machinery or windowing gear//”. This shows the ways in which laws helped to improve working conditions in coal mines because this reduced the chance of dangerous accidents happening in mines. &#39;&#39;(1 mark – Source) &#39;&#39;
+(click: ?Page)[(show: ?p4)]]
+|p4)[&#39;&#39;Source C&#39;&#39; also says, “//Further progress was made in making mines safer when the Mines Act of 1862 made single shaft mines illegal//”. This shows the ways in which laws helped to improve working conditions in coal mines because this prevented people being trapped in mines after cave-ins or floods.&#39;&#39;(1 Mark - Source)&#39;&#39;
+(click: ?Page)[(show: ?p5)]]
+|p5)[&#39;&#39;Source C &#39;&#39;also says, “//Then in 1872, miners were given the right to appoint inspectors from among themselves//”. This shows the ways in which laws helped to improve working conditions in coal mines because this meant that someone was now specifically looked after the safety of workers in the mines. &#39;&#39;(1 Mark - Source)&#39;&#39;
+(click: ?Page)[(show: ?p6)]]
+|p6)[However, &#39;&#39;Source C&#39;&#39; fails to mention that the 1860 Mines Act made it so Boys under 12 were not allowed underground unless they could read and write. This meant that more children would receive an education rather than being forced to work in the mines at a young age. &#39;&#39;(1 Mark - Recall)&#39;&#39;
+(click: ?Page)[(show: ?p7)]]
+|p7)[However, &#39;&#39;Source C&#39;&#39; also fails to mention that the 1872 Mines Act banned naked flames from the mines, reducing the risk of explosions. &#39;&#39;(1 Mark - Recall)&#39;&#39;
+(click: ?Page)[(show: ?p8)]]
+|p8)[However, &#39;&#39;Source C&#39;&#39; also fails to mention that the 1872 Mines Act made it so all pit-props had to made from steel and this reduced the risk of cave-ins. &#39;&#39;(1 Mark - Recall)&#39;&#39;]
+
+[[See SQA Marking Scheme for this Question|CBMIHF]] 
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Previous|How Fully Question]]&lt;/span&gt;
+</tw-passagedata><tw-passagedata pid="38" name="How Fully Example3" tags="" position="0,300" size="100,100">&lt;img src=&quot;https://i.imgur.com/SxAMB03.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:115%; max-width:1100px;&quot;&gt;
+|p1&gt;[//Click to reveal sample answers to question//:
+    (click: ?Page)[(show: ?p2)]]
+|p2)[&#39;&#39;Source B&#39;&#39; //partly// describes the non-violent protest of the Civil Rights Movement in the 1950s and the 1960s. &#39;&#39;(Judgment)&#39;&#39;
+(click: ?Page)[(show: ?p3)]]
+|p3)[&#39;&#39;Source B&#39;&#39; says, “//Reverend Brown launched legal action in the Supreme Court to win the right to send his child to a white school//”. This shows non-violent protest of the Civil Rights Movement because it referring to the Brown Vs. Board of Education lawsuit which officially stated that segregation in schools was wrong. &#39;&#39;(1 mark – Source) &#39;&#39;
+(click: ?Page)[(show: ?p4)]]
+|p4)[&#39;&#39;Source B&#39;&#39; also says, “//Nine black students defied the abuse of white protestors and attended a white school in Little Rock, Arkansas//”. This shows non-violent protest of the Civil Rights Movement because it is referring to the case of the Little Rock Nine who further highlighted the issue of segregation in schools and how unjust it was.&#39;&#39;(1 Mark - Source)&#39;&#39;
+(click: ?Page)[(show: ?p5)]]
+|p5)[&#39;&#39;Source B&#39;&#39; also says, “//Rosa Parks refused to give up her bus seat to a white person and was arrested//”. This shows non-violent protest of the Civil Rights Movement because it refers to the Montgomery Bus Boycott which eventually ended segregation on buses in Montgomery &#39;&#39;(1 Mark - Source)&#39;&#39;
+(click: ?Page)[(show: ?p6)]]
+|p6)[However, &#39;&#39;Source B&#39;&#39; fails to mention the Sit-Ins of the early 1960s which challenged segregation in public place like restaurants and cafes. &#39;&#39;(1 Mark - Recall)&#39;&#39;
+(click: ?Page)[(show: ?p7)]]
+|p7)[However, &#39;&#39;Source B&#39;&#39; also fails to mention the Freedom Rides of the 1960s which highlighted the issue of segregation on Federal interstate buses. &#39;&#39;(1 Mark - Recall)&#39;&#39;
+(click: ?Page)[(show: ?p8)]]
+|p8)[However, &#39;&#39;Source B&#39;&#39; also fails to mention the marches in Washington, Birmingham, and Selma which called for an end to the Jim Crow Laws and a guarantee of black peoples’ right to vote. &#39;&#39;(1 Mark - Recall)&#39;&#39;]
+
+[[See SQA Marking Scheme for this Question|FALMIHF]] 
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Previous|How Fully Question]]&lt;/span&gt;
+</tw-passagedata><tw-passagedata pid="39" name="Basic Structure How Fully" tags="" position="200,125" size="100,100">&lt;div class=&quot;big-text&quot;&gt;(text-style:&quot;bold&quot;,&quot;underline&quot;, &quot;emboss&quot;)[&#39;&#39;The How Fully Question – Basic Structure&#39;&#39;]&lt;div&gt;
+
+[&lt;div class=&quot;question-box1&quot;&gt;&lt;div class=&quot;big-text&quot;&gt;Source A partly describes/explains the… (use wording of question - Judgement)
+
+Source A says, “Quote”. This tell us that… (interpret/explain quote)
+
+Source A also says, “Quote”. This tell us that… (interpret/explain quote)
+
+Source A also says, “Quote”. This tell us that… (interpret/explain quote)
+
+However, Source A fails to mention… (describe/explain in enough detail)
+
+However, Source A also fails to mention… (describe/explain in enough detail)
+
+However, Source A also fails to mention… (describe/explain in enough detail)
+&lt;div&gt;&lt;div&gt;]
+
+[[Previous|How Fully Question]]</tw-passagedata><tw-passagedata pid="40" name="Making a Judgement" tags="" position="200,0" size="100,100">&lt;span style=&quot;font-size: 30px;&quot;&gt;[(text-style:&quot;bold&quot;,&quot;underline&quot;)[Step One: Making a Judgment]&lt;/span&gt;
+
+&#39;&#39;The&#39;&#39; sources you are being asked to examine in a How Fully question are obviously &#39;&#39;NEVER &#39;&#39;going to give you //all the information//. If they did, these questions would be pointless! Therefore, you will always start your answer in the same way – by making a //judgment// which explains that the source does not tell us everything about the focus of the question. 
+
+&#39;&#39;Write&#39;&#39; your judgement //like this//:
+
+[&lt;div class=&quot;question-box1&quot;&gt;“Source A partly explains/describe the reasons for… (insert wording of the question)”&lt;div&gt;]
+&#39;&#39;For&#39;&#39; instance, in the below example, a candidate would correctly  write their judgement as &quot;//Source A partly describes Mary&#39;s imprisonment in England//&quot;.
+
+&lt;img src=&quot;https://i.imgur.com/pGyzBLf.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:100%; max-width:1200px;&quot;&gt;
+
+&#39;&#39;The&#39;&#39; SQA even tell you that you need to make a //judgement// in the &#39;&#39;&#39;prompt&#39;&#39;&#39; below the question just in case you forget: &quot;(Use the source and recall to reach a //judgement//.)&quot;].
+
+&#39;&#39;Writing&#39;&#39; your judgement doesn’t get you a mark, but if there is no judgment in your answer &#39;&#39;you can only get a Maximum of 2 marks out of 6&#39;&#39;! So do not forget to write this at the start of your answer!
+
+&#39;&#39;Also&#39;&#39;, you only need to make a judgment &#39;&#39;once&#39;&#39; (preferably at the start of your answer) – if you find yourself writing the word “partly” multiple times //then stop//!
+
+//Click to Continue to &lt;span style=&quot;color: #ff6600;&quot;&gt;[[Step Two: The Source|The Source HF]]&lt;/span&gt;//]
+[[Previous|How Fully Question]]</tw-passagedata><tw-passagedata pid="41" name="The Source HF" tags="" position="325,0" size="100,100">&lt;span style=&quot;font-size: 30px;&quot;&gt;(text-style:&quot;bold&quot;,&quot;underline&quot;)[Step Two: The Source]&lt;/span&gt;
+
+Now, to //actually// be awarded marks in this question, you first need to &#39;&#39;comment on what the source says&#39;&#39; (//source//):
+
+(text-style:&quot;bold&quot;,&quot;underline&quot;)[What the SOURCE says [&#39;&#39;(text-style:&quot;bold&quot;,&quot;underline&quot;)[Up to 3 Marks]&#39;]]
+
+&#39;&#39;Candidates&#39;&#39; can be given up to &#39;&#39;3 marks&#39;&#39; for their identification of //relevant quotes// from the //source//. 
+
+&#39;&#39;You&#39;&#39; should quote directly from the source – &#39;&#39;do not shorten the quotes, write them in full&#39;&#39;. You must then &#39;&#39;interpret/explain/describe the meaning of the quote&#39;&#39; //in your own words// to get the mark (basically ask yourself the question: “what is the source saying?”).
+
+[&lt;div class=&quot;question-box1&quot;&gt;For example (in the question below): Source C says, &quot;When Mary moved to Bolton Castle her staff totalled 50 servants including a secretary, a doctor and two cooks.&quot; This tells us that while she was imprisoned at Bolton Castle, Mary still had plenty of servants to look after her needs.&lt;div&gt;]&#39;&#39;Aim&#39;&#39; to quote and interpret the source &#39;&#39;three times&#39;&#39; total (you can still achieve full marks in the question if you only quote twice, but three is best practice!)
+
+&#39;&#39;There&#39;&#39; will always be four sentences that are quotable answers to the question, but watch out for the (text-colour:red)[&#39;&#39;distractor&#39;&#39;] - which is usually one sentence that is not correct a answer to the question!
+
+&lt;img src=&quot;https://i.imgur.com/pGyzBLf.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:100%; max-width:1200px;&quot;&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Back|Making a Judgement]]&lt;/span&gt;
+//Click to Continue to &lt;span style=&quot;color: #ff6600;&quot;&gt;[[Step Three: Recall|Recall HF]]&lt;/span&gt;//
+[[Return|How Fully Question]]</tw-passagedata><tw-passagedata pid="42" name="Recall HF" tags="" position="325,125" size="100,100">(text-style:&quot;bold&quot;,&quot;underline&quot;)[Step Three: Recall]
+
+Next, you should &#39;&#39;comment on what the source doesn&#39;t say&#39;&#39; (//recall//):
+
+(text-style:&quot;bold&quot;,&quot;underline&quot;)[What the SOURCE doesn’t say – RECALL (|tooltip&gt;[&#39;&#39;Max 4 Marks&#39;&#39;|tooltiptext&gt;[You can only be awarded marks for commenting on what the source fails to mention a maximum of four times]])]: 
+Candidates can be given up to 4 marks for their identification of points relevant to the question, based on their own knowledge, that are not in the source. Try to structure your recall like this: 
+//“However, Source A fails to mention…”// Make sure you say what it fails to mention in enough detail.
+
+[&lt;div class=&quot;question-box1&quot;&gt;For example (in example &#39;&#39;Example B&#39;&#39; below): Source C fails to mention the railways allowed newspapers to be carried across the country allowing people to access national news&lt;div&gt;]
+(text-style:&quot;bold&quot;,&quot;emboss&quot;)[B)] &lt;img src=&quot;https://i.imgur.com/6OPv8Ih.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:100%; max-width:1200px;&quot;&gt;
+
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Back|The Source HF]]&lt;/span&gt;
+//Click to see//&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Additional Tips|Additional Tips HF]]&lt;/span&gt;
+[[Return|How Fully Question]]</tw-passagedata><tw-passagedata pid="43" name="Additional Tips HF" tags="" position="200,250" size="100,100">(text-style:&quot;bold&quot;,&quot;underline&quot;)[Additional Tips]
+
+The best way to tackle this question is to&#39;&#39; interpret 3 quotes and provide 3 points of recall&#39;&#39;, but you can of course only interpret 2 quotes and provide 4 points of recall to achieve full marks.
+
+A maximum of &#39;&#39;2 marks may be given for answers which have no recall&#39;&#39;, so make sure you include recall! (4 points of recall only however will still achieve 4 marks out of 6)
+- &#39;&#39;When quoting&#39;&#39;, do not miss out any words or try to &#39;&#39;shorten the quotes&#39;&#39; by using “…”. This will likely lose you the mark!
+
+The only difference between &#39;&#39;How Fully //describe//&#39;&#39; vs &#39;&#39;How Fully //explain//&#39;&#39; questions is that you may need more detail or explanation in your interpretation of the quotes/recall in &#39;&#39;How Fully //explain//&#39;&#39; questions.
+
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Back|Recall HF]]&lt;/span&gt;
+[[Return|How Fully Question]]</tw-passagedata><tw-passagedata pid="44" name="MQOSMIHF" tags="" position="100,100" size="100,100">&lt;img src=&quot;https://i.imgur.com/NSlISMb.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:115%; max-width:1100px;&quot;&gt;
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Previous|How Fully Question]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="45" name="CBMIHF" tags="" position="100,200" size="100,100">&lt;img src=&quot;https://i.imgur.com/gi9hbSc.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:115%; max-width:1100px;&quot;&gt;
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Previous|How Fully Question]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="46" name="FALMIHF" tags="" position="100,300" size="100,100">&lt;img src=&quot;https://i.imgur.com/J7O5SnS.jpeg&quot; alt=&quot;Description&quot; style=&quot;width:115%; max-width:1100px;&quot;&gt;
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Previous|How Fully Question]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="47" name="Who Wrote it?" tags="" position="900,625" size="100,100">&lt;span style=&quot;font-size: 30px;&quot;&gt;[(text-style:&quot;bold&quot;,&quot;underline&quot;)[Who Wrote the Source (Author)?]&lt;/span&gt;
+
+&#39;&#39;You&#39;&#39; will be told the author of the source at the start of the question (above the source). Your task is to explain why that author is a useful source of information. This will gain you &#39;&#39;1 Mark&#39;&#39;.
+
+&#39;&#39;The&#39;&#39; Source will ALWAYS either be someone who was there to witness the events happening (an EYEWITNESS from the time) or someone writing long after the events (an HISTORIAN or expert writing long after the time). For each, you can use the following answer structures to gain the Mark:
+
+[&lt;div class=&quot;question-box1&quot;&gt;(text-style:&quot;bold&quot;,&quot;underline&quot;)[EYEWITNESS]
+
+&#39;&#39;Source A&#39;&#39; (B, C...) was written by… (who was the person stated above the source?) This makes the source useful because they will provide //first-hand evidence// of… (use the wording of the question: for instance, the murder of Darnley, working conditions in the coal mines etc.)&lt;div&gt;][&lt;div class=&quot;question-box1&quot;&gt;(text-style:&quot;bold&quot;,&quot;underline&quot;)[HISTORIAN/EXPERT]
+
+&#39;&#39;Source A&#39;&#39; (B, C...) was written by…(who? i.e. a Modern Historian, any expert). This makes the source useful because they will have carefully researched this subject and will have a good understanding of… (use the wording of the question – be specific otherwise you will not get the mark!)
+&lt;div&gt;]&#39;&#39;You&#39;&#39; must clearly state what the EYEWITNESS is providing “//first-hand evidence of//…” or what the HISTORIAN will “//have a good understanding of//…”. &#39;&#39;DO NOT&#39;&#39; be vague here by writing things like “useful because they //were there at the time//” or “they will have a good understanding of the //topic//” because this will lost you the mark!
+
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[What the Source says?|What it says?]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[What has been Missed out?|What Missed?]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[When they wrote it?|When Wrote?]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[What Type of source it is?|Type of Source]]&lt;/span&gt;
+&lt;span style=&quot;color: #ff6600;&quot;&gt;[[Why they wrote it?|Why they wrote it]]&lt;/span&gt;
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Previous|Evaluate the Usefulness Question]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="48" name="What it says?" tags="" position="1025,625" size="100,100">&lt;span style=&quot;font-size: 30px;&quot;&gt;[(text-style:&quot;bold&quot;,&quot;underline&quot;)[What it says?]&lt;/span&gt;
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Previous|Evaluate the Usefulness Question]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="49" name="What Missed?" tags="" position="775,625" size="100,100">&lt;span style=&quot;font-size: 30px;&quot;&gt;[(text-style:&quot;bold&quot;,&quot;underline&quot;)[What has been missed out?]&lt;/span&gt;
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Previous|Evaluate the Usefulness Question]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="50" name="When Wrote?" tags="" position="900,750" size="100,100">&lt;span style=&quot;font-size: 30px;&quot;&gt;[(text-style:&quot;bold&quot;,&quot;underline&quot;)[When was the source written?]&lt;/span&gt;
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Previous|Evaluate the Usefulness Question]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="51" name="Type of Source" tags="" position="1025,750" size="100,100">&lt;span style=&quot;font-size: 30px;&quot;&gt;[(text-style:&quot;bold&quot;,&quot;underline&quot;)[What type of source is it?]&lt;/span&gt;
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Previous|Evaluate the Usefulness Question]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="52" name="Why they wrote it" tags="" position="775,750" size="100,100">&lt;span style=&quot;font-size: 30px;&quot;&gt;[(text-style:&quot;bold&quot;,&quot;underline&quot;)[Why they wrote it?]&lt;/span&gt;
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Previous|Evaluate the Usefulness Question]]&lt;/span&gt;</tw-passagedata><tw-passagedata pid="53" name="Basic Structure Evaluate" tags="" position="900,900" size="100,100">&lt;div class=&quot;big-text&quot;&gt;(text-style:&quot;bold&quot;,&quot;underline&quot;, &quot;emboss&quot;)[&#39;&#39;The //Evaluate the Usefulness// Question – Basic Structure&#39;&#39;]&lt;div&gt;
+
+[&lt;div class=&quot;question-box1&quot;&gt;&lt;div class=&quot;big-text&quot;&gt;Source A was written by… This makes the source useful because… (EYEWITNESS or HISTORIAN?)
+
+Source A says, “Quote”. This is useful and I know it to be true because my teacher told me so.
+
+Source A also says, “Quote”. This is useful and I know it to be true because my teacher told me so.
+
+However, Source A is less useful because it doesn’t tell us…
+
+However, Source A is also less useful because it doesn’t tell us…
+
+&lt;div&gt;&lt;div&gt;]
+
+&lt;span style=&quot;color: #4CAF50;&quot;&gt;[[Previous|Evaluate the Usefulness Question]]&lt;/span&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
